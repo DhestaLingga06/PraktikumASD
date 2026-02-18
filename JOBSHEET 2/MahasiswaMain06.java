@@ -17,5 +17,8 @@ public class MahasiswaMain06 {
     mhs2.updateIpk(3.30);
     mhs2.tampilkanInformasi();
 
+    Mahasiswa06 mhsLingga = new Mahasiswa06("Dhesta Lingga", "254107060084", 3.71, "SIB 1A");
+    mhsLingga.tampilkanInformasi();
+
     }
 }
