@@ -1,4 +1,5 @@
 import java.util.Scanner;
+
 class Mahasiswa06 {
 
     public String nim;
