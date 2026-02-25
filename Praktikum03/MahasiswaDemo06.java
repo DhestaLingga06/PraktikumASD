@@ -6,7 +6,14 @@ class Mahasiswa06 {
     public String kelas;
     public float ipk;
 
+    void cetakInfo() {
+        System.out.println("NIM    : " + nim);
+        System.out.println("Nama   : " + nama);
+        System.out.println("Kelas  : " + kelas);
+        System.out.println("IPK    : " + ipk);
+        System.out.println("---------------------------------");
     }
+}
 
 public class MahasiswaDemo06 {
     public static void main(String[] args) {
@@ -33,11 +40,7 @@ public class MahasiswaDemo06 {
         
         for(int i = 0; i < 3; i++) {
             System.out.println("Data Mahasiswa ke-" + (i + 1));
-            System.out.println("NIM        : "+ arrayOfMahasiswa06[i].nim);
-            System.out.println("Nama       :" + arrayOfMahasiswa06[i].nama);
-            System.out.println("Kelas      :" + arrayOfMahasiswa06[i].kelas);
-            System.out.println("IPK        :" + arrayOfMahasiswa06[i].ipk);
-            System.out.println("--------------------------------");
+            arrayOfMahasiswa06[i].cetakInfo();
         }
     }
 }
