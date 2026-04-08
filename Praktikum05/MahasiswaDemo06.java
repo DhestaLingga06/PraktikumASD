@@ -1,12 +1,11 @@
 import java.util.Scanner;
-
 public class MahasiswaDemo06 {
     public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
-        
         MahasiswaBerprestasi06 list = new MahasiswaBerprestasi06();
+        Scanner sc = new Scanner(System.in);
+        int jumMhs = 5;
         
-        for (int i = 0; i < 5; i++) {
+        for (int i = 0; i < jumMhs; i++) {
             System.out.println("Masukkan Data Mahasiswa ke- " + (i + 1));
             System.out.print("NIM: ");
             String nim = sc.nextLine();
@@ -15,17 +14,25 @@ public class MahasiswaDemo06 {
             System.out.print("Kelas : ");
             String kelas = sc.nextLine();
             System.out.print("IPK : ");
-            double ipk = sc.nextDouble();
-            sc.nextLine();
-
-            Mahasiswa06 m = new Mahasiswa06(nim, nama, kelas, ipk);
-            list.tambah(m);
-
+            String ip = sc.nextLine();
+            double ipk = Double.parseDouble(ip);
             System.out.println("------------------------------");
-        }
+            list.tambah(new Mahasiswa06(nim, nama, kelas, ipk));
 
-        System.out.println("Data yang sudah terurut menggunakan INSERTION SORT (DSC)");
-        list.insertionSort();
-        list.tampil();
+        }
+            list.tampil();
+            //Melakukan pencarian data sequential
+            System.out.println("------------------------------");
+            System.out.println("Pencarian data");
+            System.out.println("------------------------------");
+            System.out.println("Masukkan ipk mahasiswa yang dicari: ");
+            System.out.print("IPK: ");
+            double cari = sc.nextDouble();
+
+            System.out.println("menggunakan sequential searching");
+            double posisi = list.sequentialSearching(cari);
+            int pss = (int)posisi;
+            list.tampilPosisi(cari, pss);
+            list.tampilDataSearch(cari, pss);
     }
 }
