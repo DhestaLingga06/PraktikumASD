@@ -136,6 +136,7 @@ public class MainCM1 {
                 for (int i = 0; i < peminjaman.length; i++) {
                 baru[i] = peminjaman[i];
                 }
+                
                 baru[peminjaman.length] = pBaru;
                 peminjaman = baru;
                 System.out.println("Data peminjaman berhasil ditambahkan!");
@@ -170,7 +171,6 @@ public class MainCM1 {
                 return findBinarySearch(data, cari, left, mid - 1);
             }
         }
-        
         return -1;
     }
 }
