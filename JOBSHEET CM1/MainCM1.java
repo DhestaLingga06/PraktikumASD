@@ -155,7 +155,9 @@ public class MainCM1 {
                 System.out.print("Jumlah Peminjaman Tepat Waktu: " + tepat);
                 break;
             }
+
         } while (pilih != 8);
+        
     } 
     
     static int findBinarySearch(Peminjaman[] data, String cari, int left, int right) {
