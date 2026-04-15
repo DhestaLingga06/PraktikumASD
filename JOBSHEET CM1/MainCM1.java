@@ -154,7 +154,6 @@ public class MainCM1 {
                 System.out.println("\nJumlah Peminjaman Terlambat: " + terlambat);
                 System.out.print("Jumlah Peminjaman Tepat Waktu: " + tepat);
                 break;
-
             }
         } while (pilih != 8);
     } 
