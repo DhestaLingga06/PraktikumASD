@@ -154,7 +154,7 @@ public class MainCM1 {
                 System.out.println("\nJumlah Peminjaman Terlambat: " + terlambat);
                 System.out.print("Jumlah Peminjaman Tepat Waktu: " + tepat);
                 break;
-                
+
             }
         } while (pilih != 8);
     } 
@@ -171,6 +171,7 @@ public class MainCM1 {
                 return findBinarySearch(data, cari, left, mid - 1);
             }
         }
+        
         return -1;
     }
 }
