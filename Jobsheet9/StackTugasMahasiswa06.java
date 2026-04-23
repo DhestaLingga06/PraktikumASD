@@ -63,4 +63,7 @@ public class StackTugasMahasiswa06 {
             return null;
         }
     }
-}
+    public int jumlah() {
+        return top + 1;
+    }
+} 
