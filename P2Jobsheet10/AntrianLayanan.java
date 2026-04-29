@@ -81,4 +81,13 @@ public class AntrianLayanan {
         size--;
         return mhs;   
     }
+    public void lihatAkhir() {
+        if (IsEmpty()) {
+            System.out.println("Antrian kosong.");
+        } else {
+        System.out.println("Mahasiswa paling belakang: ");
+        System.out.println("NIM - NAMA - PRODI - KELAS");
+        data[rear].tampilkanData();
+        }
+    }
 }
