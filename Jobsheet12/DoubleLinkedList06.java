@@ -96,4 +96,15 @@ public class DoubleLinkedList06 {
         }
         System.out.println("Data berhasil disisipkan setelah NIM " + keyNim);
     }
+    public void printReverse() {
+        if (isEmpty()) {
+            System.out.println("Linked List masih kosong.");
+            return;
+        }
+        Node06 current = tail;
+        while (current != null) {
+            current.data.tampil();
+            current = current.prev;
+        } 
+    }
 }
