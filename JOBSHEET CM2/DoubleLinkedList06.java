@@ -116,4 +116,74 @@ public class DoubleLinkedList06 {
             System.out.println("Total Pendapatan : Rp " + totalPendapatan);
         }
     }
+    // Hapus Pesanan Berdasarkan Kode
+    public void hapusPesanan(int kodePesanan) {
+        if (headPesanan == null) {
+            System.out.println("Data pesanan kosong");
+            return;
+        }
+        Node06 current = headPesanan;
+        while (current != null) {
+            if (current.pesanan.kodePesanan == kodePesanan) {
+                if (current == headPesanan) {
+                    headPesanan = current.next;
+                    if (headPesanan != null) {
+                        headPesanan.prev = null;
+                    } else {
+                        tailPesanan = null;
+                    }
+                } else if (current == tailPesanan) {
+                    tailPesanan = tailPesanan.prev;
+                    tailPesanan.next = null;
+            } else {
+                current.prev.next = current.next;
+                current.next.prev = current.prev;
+            }
+            System.out.println("Pesanan berhasil dihapus");
+            return;
+            }
+            current = current.next;
+        }
+        System.out.println("Kode pesanan tidak ditemukan");
+    }
+    // Cari Pembeli
+    public void cariPembeli(String nama) {
+        Node06 current = head;
+        while (current != null) {
+            if (current.pembeli.namaPembeli.equalsIgnoreCase(nama)) {
+                System.out.println("Pembeli ditemukan");
+                System.out.println("No Antrian : " + current.noAntrian);
+                System.out.println("Nama       : " + current.pembeli.namaPembeli);
+                System.out.println("No HP      : " + current.pembeli.noHp);
+                return;
+            }
+            current = current.next;
+        }
+        System.out.println("Pembeli tidak ditemukan");
+    }
+    //Mengurutkan Antrian berdasarkan nama
+    public void sortAntrian() {
+        if (head == null) {
+            return;
+        }
+        boolean tukar;
+        do {
+            tukar = false;
+            Node06 current = head;
+            while (current.next != null) {
+                if (current.pembeli.namaPembeli.compareToIgnoreCase(
+                    current.next.pembeli.namaPembeli) > 0) {
+                    Pembeli06 tempPembeli = current.pembeli;
+                    current.pembeli = current.next.pembeli;
+                    current.next.pembeli = tempPembeli;
+                    int tempNo = current.noAntrian;
+                    current.noAntrian = current.next.noAntrian;
+                    current.next.noAntrian = tempNo;
+                    tukar = true;
+                }
+                current = current.next;
+            }
+        } while (tukar);
+         System.out.println("Antrian berhasil diurutkan");
+    }    
 }

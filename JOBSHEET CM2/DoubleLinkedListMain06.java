@@ -14,6 +14,9 @@ public class DoubleLinkedListMain06 {
             System.out.println("3. Hapus Antrian dan Pesan");
             System.out.println("4. Laporan Pesanan");
             System.out.println("5. Hitung Total Pendapatan");
+            System.out.println("6. Hapus Pesanan");
+            System.out.println("7. Cari Pembeli");
+            System.out.println("8. Sort Antrian");
             System.out.println("0. Keluar");
             System.out.print("Pilih menu : ");
             pilih = sc.nextInt();
@@ -52,6 +55,24 @@ public class DoubleLinkedListMain06 {
                 
                 case 5: 
                     list.laporanPesanan();;
+                    break;
+
+                case 6:
+                    System.out.print("Masukkan kode pesanan : ");
+                    int kodeHapus = sc.nextInt();
+                    sc.nextLine();
+                    list.hapusPesanan(kodeHapus);
+                    break;
+                
+                case 7:
+                    System.out.print("Masukkan nama pembeli : ");
+                    String cari = sc.nextLine();
+                    list.cariPembeli(cari);
+                    break;
+
+                case 8:
+                    list.sortAntrian();
+                    list.cetakAntrian();
                     break;
 
                 case 0:
