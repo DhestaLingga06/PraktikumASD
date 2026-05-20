@@ -60,13 +60,14 @@ public class DoubleLinkedList06 {
             return;
         }
         Node06 current = head;
-        System.out.println("No.Antrian " + current.noAntrian + " - " + current.pembeli.namaPembeli + " telah memesan " + pesanan.namaPesanan);
+        System.out.println("No.Antrian " + current.noAntrian + " - " + 
+        current.pembeli.namaPembeli + " telah memesan " + pesanan.namaPesanan);
         tambahLaporan(pesanan);
-        head = head.next;
-        if (head != null) {
-            head.prev = null;
+        if (head != tail) {
+            head = tail = null;
         } else {
-            tail = null;
+            head = head.next;
+            head.prev = null;
         }
     }
     //Sorting Pesanan
