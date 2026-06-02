@@ -165,4 +165,60 @@ public class BinaryTree06 {
             }
         }
     }
+
+    //Tugas No 1.(Menambahkan method addRekursif)
+    public void addRekursif(Mahasiswa06 mahasiswa) {
+        root = addRekursif(root, mahasiswa);
+    }
+    public Node06 addRekursif(Node06 current, Mahasiswa06 mahasiswa) {
+        if (current == null) {
+            return new Node06(mahasiswa);
+        }
+
+        if (mahasiswa.ipk < current.mahasiswa.ipk) {
+            current.left = addRekursif(current.left, mahasiswa);
+        } else if (mahasiswa.ipk > current.mahasiswa.ipk) {
+            current.right = addRekursif(current.right, mahasiswa);
+        }
+        return current;
+    }
+
+    //Tugas No 2. Menambahkan method cariMinIPK() dan cariMaxIPK()
+    public void cariMinIPK() {
+        if (isEmpty()) {
+            System.out.println("Binary Tree kosong.");
+            return;
+        }
+        
+        Node06 current = root;
+        while (current.left != null) {
+            current = current.left;
+        }
+        current.mahasiswa.tampilInformasi();
+    }
+
+    public void cariMaxIPK() {
+        if (isEmpty()) {
+            System.out.println("Binary Tree kosong.");
+            return;
+        }
+
+        Node06 current = root;
+        while (current.right != null) {
+            current = current.right;
+        }
+        current.mahasiswa.tampilInformasi();
+    }
+
+    //Tugas No 3. Menambahkan method tampilMahasiswaIPKdiAtas()
+    public void tampilMahasiswaIPKdiAtas(Node06 node, double batasIPK) {
+        if (node != null) {
+            tampilMahasiswaIPKdiAtas(node.left, batasIPK);
+
+            if (node.mahasiswa.ipk > batasIPK) {
+                node.mahasiswa.tampilInformasi();
+            }
+            tampilMahasiswaIPKdiAtas(node.right, batasIPK);
+        }
+    }
 }
